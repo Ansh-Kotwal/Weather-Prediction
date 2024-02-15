@@ -23,10 +23,6 @@ class Automation:
             browser.get(region_link)
             
             
-            # element = browser.find_elements(By.CLASS_NAME, "subnav-item")
-            # for e in element:
-            #     print(e.get_attribute('href'))
-            
             url = browser.current_url
             daily_url = url.replace("weather-forecast","daily-weather-forecast")
             
