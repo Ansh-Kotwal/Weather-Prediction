@@ -1,33 +1,19 @@
-import json
-from dailyData import getData
-from automation import Automation
-from ConstructData import getJson;
+from dailyData import getJson
+from automation import getURL
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC # exceptional conditions class
 
-
-
-class Main:
-    automation = Automation()
+def scrapData(location):
     
     browser = webdriver.Chrome()
     browser.get("https://www.accuweather.com/")
-    
-    daily_url = automation.getURL(browser , "Dehradun")
+    daily_url = getURL(browser , location)
     print(daily_url)
     
-    jsonData = getJson(browser, daily_url)
+    jsonData = getJson(browser, daily_url , location)
     
     print(jsonData)
     
-    json_data = json.dumps(jsonData)
-    print(json_data)
-    
-    with open("output.json", "w") as outfile:
-        json.dump(jsonData, outfile)
-        
-        
     browser.close()
+    
+json_data = scrapData("Haldwani")
+print(json_data)
