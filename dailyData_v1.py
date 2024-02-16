@@ -1,43 +1,39 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-import json
 
 
 def scrappingDailyData(driver , heading , url):
  print(heading + " = " + url)
  
- jsonData = []
+ daily_Data = []
 
- for day in range (1 , 45):
-   jsondata(driver , f"{url}?day={day}" , day , jsonData)
+ for day in range (1 , 3):
+   perDayData(driver , f"{url}?day={day}" , day , daily_Data)
 
-
- json_data = json.dumps(jsonData)
-   
- with open("output.json", "w") as outfile:
-    json.dump(jsonData, outfile)
+ return daily_Data
         
  print("JSON FILE CREATED")
 
 
-def jsondata(driver , dayUrl , day , jsonData):
+def perDayData(driver , dayUrl , day , daily_Data):
    #print(dayUrl)
    driver.get(dayUrl)
-   wait = WebDriverWait(driver, 10 )
+   wait = WebDriverWait(driver, 5 )
 
    temp_tag = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, "temperature")))
    phrase_tag =  wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, "phrase")))
-   day_night_tag = driver.find_elements(By.CLASS_NAME, "title")
-   other_data = driver.find_elements(By.CLASS_NAME, "value")
+   day_night_tag = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, "title")))
+   other_data = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, "value")))
 
 
    #print(len(day_night_tag))
 
    if len(day_night_tag) == 6:  
 
-            data = {
+            per_Day_Data = {
                     "day":{
+                            "available" : 0,
                             "temp": temp_tag[0].text,
                             "max_uv_index":other_data[0].text,
                             "wind": other_data[1].text,
@@ -63,8 +59,10 @@ def jsondata(driver , dayUrl , day , jsonData):
             temp_text = temp_tag.text
             phrase = phrase_tag.text
 
-            data = {
-                    "day":"data not available",
+            per_Day_Data = {
+                    "day":{
+                             "available" : 1
+                           },
                     "night":{
                             "temp": temp_text,
                             "wind": other_data[0].text,
@@ -78,15 +76,16 @@ def jsondata(driver , dayUrl , day , jsonData):
                     }
 
    #print(" End of  getData function ")
-   jsonformat(day , data , jsonData)
+   dataAppend(day , per_Day_Data , daily_Data)
    
 
-def jsonformat(day , data , jsonData):
+def dataAppend(day , per_Day_Data , daily_Data):
   
-  data = {
-            f"day{day}" : data
-        }   
-  jsonData.append(data)    
+  per_Day_Data = {
+            f"day{day}" : per_Day_Data
+        }
+     
+  daily_Data.append(per_Day_Data)    
        
  
     

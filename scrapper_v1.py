@@ -1,4 +1,5 @@
 from selenium import webdriver
+import json
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -37,10 +38,11 @@ class Scrapping:
 
    element = driver.find_elements(By.CLASS_NAME, "subnav-item")
    
-   for i in range(1):
-    scrappingDailyData(driver ,element[2].text, element[2].get_attribute('href'))
-    
    
+   dailydata = scrappingDailyData(driver ,element[2].text, element[2].get_attribute('href'))
+    
+   with open("output.json", "w") as outfile:
+    json.dump(dailydata, outfile)
    
   # input("Enter to Quit")
    
