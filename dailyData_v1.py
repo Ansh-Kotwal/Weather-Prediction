@@ -11,13 +11,10 @@ def scrappingDailyData(driver , heading , url):
  for day in range (1 , 45):
    perDayData(driver , f"{url}?day={day}" , day , daily_Data)
 
+ print("Data Successfully Added")
  return daily_Data
         
- print("JSON FILE CREATED")
-
-
 def perDayData(driver , dayUrl , day , daily_Data):
-   #print(dayUrl)
    driver.get(dayUrl)
    wait = WebDriverWait(driver, 5 )
 
@@ -74,11 +71,9 @@ def perDayData(driver , dayUrl , day , daily_Data):
                             "remark": phrase
                             }
                     }
-
-   #print(" End of  getData function ")
+            
    dataAppend(day , per_Day_Data , daily_Data)
    
-
 def dataAppend(day , per_Day_Data , daily_Data):
   
   per_Day_Data = {
