@@ -4,6 +4,7 @@ class main:
     def main():
      serverRun = scrapper_v1.Scrapping
 
+
      location = input("Enter location => ")
      serverRun.scrappingData(location)
 
