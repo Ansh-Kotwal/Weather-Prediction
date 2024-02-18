@@ -5,8 +5,8 @@ class main:
      serverRun = scrapper_v1.Scrapping
 
 
-     location = input("Enter location => ")
-     serverRun.scrappingData(location)
+    # location = input("Enter location => ")
+     serverRun.scrappingData("new york")
 
 
 # Class run

@@ -5,6 +5,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from dailyData_v1 import scrappingDailyData
 from jsonOutput import jsonOutputFile
+from excelOutput import json_to_excel
+import json
 
 
 class Scrapping: 
@@ -42,6 +44,13 @@ class Scrapping:
    daily_data = scrappingDailyData(driver ,element[2].text, element[2].get_attribute('href'))
     
    jsonOutputFile(location , daily_data)
+
+   f = open(f"{location.capitalize()}WeatherInfo.json")
+
+   json_data = json.load(f)
+   
+   json_to_excel(json_data, f"{location.capitalize()}WeatherInfo.xlsx")
+
    
    
    

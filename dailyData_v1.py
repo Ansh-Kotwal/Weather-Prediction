@@ -8,7 +8,7 @@ def scrappingDailyData(driver , heading , url):
  
  daily_Data = []
 
- for day in range (1 ,45):
+ for day in range (1 , 40):
    perDayData(driver , f"{url}?day={day}" , day , daily_Data)
 
  print("Data Successfully Added")
