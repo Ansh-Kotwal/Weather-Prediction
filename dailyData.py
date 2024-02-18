@@ -4,12 +4,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC # exceptional conditions class
 
 def getData(browser , url):
-    print("inside getData function")
     
     try:
         browser.get(url)
         wait = WebDriverWait(browser, 10 )
-        print("Scrapping data")
         
         date_day_tag = wait.until(EC.presence_of_all_elements_located((By.XPATH, "/html/body/div/div[7]/div[1]/div[1]/div[1]/div")))
         temp_tag = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, "temperature")))
@@ -66,8 +64,7 @@ def getData(browser , url):
                         "remark": phrase_tag[0].text
                         }
                 }
-
-        print("End of  getData function")
+           
         return data
     
     except Exception as e:
@@ -77,20 +74,22 @@ def getData(browser , url):
         
 def getJson(browser , daily_url , location):
     
-    print("inside getJson function")
-
     index = daily_url.find("city=")
     daily_url = daily_url[:index]
-
+    
+    print("Scrapping data ....")
     jsonData =  dict({"location":location})
+    
     for i in range(1,10):
         main_card_url = daily_url+"day="+str(i)
         data = {
-            "day "+str(i) : getData(browser,main_card_url)
+            "day"+str(i) : getData(browser,main_card_url)
         }
         jsonData.update(data)
-        json_data=json.dumps(jsonData, indent=2)
+        # json_data=json.dumps(jsonData, indent=2)
+        
 
+    print("Data collected")
 
-    return json_data
+    return jsonData
 
