@@ -9,7 +9,7 @@ def flatten_json(json_data):
             day = value['day']
             night = value['night']
             flattened_record = {
-                'Day': day_number,
+                'Day': day_number.capitalize(),
                 'Day Temperature': day['temp'],
                 'Max UV Index': day['max_uv_index'],
                 'Day Wind': day['wind'],
@@ -56,5 +56,7 @@ def json_to_excel(json_data, excel_file):
 
     # Open Excel file
    # os.system(f'start excel "{excel_file}"')
+    
+    print("Excel File Successfully Created") 
 
 # json_to_excel(json_data, 'output_excel_file.xlsx')
