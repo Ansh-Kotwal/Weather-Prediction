@@ -1,5 +1,4 @@
 from openpyxl import Workbook
-import os
 
 def flatten_json(json_data):
     flattened_data = []
