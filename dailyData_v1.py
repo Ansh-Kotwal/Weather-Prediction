@@ -8,7 +8,7 @@ def scrappingDailyData(driver , heading , url):
  
  daily_Data = []
 
- for day in range (1 , 40):
+ for day in range (1 , 3):
    perDayData(driver , f"{url}?day={day}" , day , daily_Data)
 
  print("Data Successfully Added")
@@ -23,7 +23,7 @@ def perDayData(driver , dayUrl , day , daily_Data):
    day_night_tag = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, "title")))
    other_data = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, "value")))
 
-   print(day)
+   print(f"Day {day}")
    #print(len(day_night_tag))
 
    if len(day_night_tag) == 6:  
