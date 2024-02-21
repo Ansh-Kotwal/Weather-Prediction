@@ -1,0 +1,627 @@
+[
+    {
+        "location": "dehradun"
+    },
+    {
+        "day1": [
+            {
+                "time": "11 AM",
+                "temp": "18\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy sunshine",
+                "RealFeel Shade\u2122": "18\u00b0",
+                "Wind": "SSW 4 km/h",
+                "Air Quality": "Unhealthy",
+                "Max UV Index": "5 Moderate"
+            },
+            {
+                "time": "12 PM",
+                "temp": "20\u00b0",
+                "precipitation": "2%",
+                "remarks": "Hazy sunshine",
+                "RealFeel Shade\u2122": "19\u00b0",
+                "Wind": "SSW 6 km/h",
+                "Air Quality": "Unhealthy",
+                "Max UV Index": "5 Moderate"
+            },
+            {
+                "time": "1 PM",
+                "temp": "21\u00b0",
+                "precipitation": "7%",
+                "remarks": "Hazy sunshine",
+                "RealFeel Shade\u2122": "20\u00b0",
+                "Wind": "SSW 7 km/h",
+                "Air Quality": "Unhealthy",
+                "Max UV Index": "5 Moderate"
+            },
+            {
+                "time": "2 PM",
+                "temp": "22\u00b0",
+                "precipitation": "7%",
+                "remarks": "Hazy sunshine",
+                "RealFeel Shade\u2122": "21\u00b0",
+                "Wind": "SSW 9 km/h",
+                "Air Quality": "Unhealthy",
+                "Max UV Index": "4 Moderate"
+            },
+            {
+                "time": "3 PM",
+                "temp": "21\u00b0",
+                "precipitation": "7%",
+                "remarks": "Hazy sunshine",
+                "RealFeel Shade\u2122": "20\u00b0",
+                "Wind": "SSW 11 km/h",
+                "Air Quality": "Unhealthy",
+                "Max UV Index": "2 Low"
+            },
+            {
+                "time": "4 PM",
+                "temp": "21\u00b0",
+                "precipitation": "7%",
+                "remarks": "Hazy sunshine",
+                "RealFeel Shade\u2122": "19\u00b0",
+                "Wind": "SSW 11 km/h",
+                "Air Quality": "Unhealthy",
+                "Max UV Index": "2 Low"
+            },
+            {
+                "time": "5 PM",
+                "temp": "20\u00b0",
+                "precipitation": "7%",
+                "remarks": "Hazy sunshine",
+                "RealFeel Shade\u2122": "19\u00b0",
+                "Wind": "SW 7 km/h",
+                "Air Quality": "Unhealthy",
+                "Max UV Index": "1 Low"
+            },
+            {
+                "time": "6 PM",
+                "temp": "18\u00b0",
+                "precipitation": "5%",
+                "remarks": "Hazy sunshine",
+                "RealFeel Shade\u2122": "18\u00b0",
+                "Wind": "WSW 7 km/h",
+                "Air Quality": "Unhealthy",
+                "Max UV Index": "0 Low"
+            },
+            {
+                "time": "7 PM",
+                "temp": "16\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NW 7 km/h",
+                "Air Quality": "Unhealthy",
+                "Wind Gusts": "20 km/h",
+                "Humidity": "54%"
+            },
+            {
+                "time": "8 PM",
+                "temp": "15\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NE 9 km/h",
+                "Air Quality": "Unhealthy",
+                "Wind Gusts": "24 km/h",
+                "Humidity": "54%"
+            },
+            {
+                "time": "9 PM",
+                "temp": "14\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy moonlight",
+                "Wind": "ENE 9 km/h",
+                "Air Quality": "Unhealthy",
+                "Wind Gusts": "24 km/h",
+                "Humidity": "55%"
+            },
+            {
+                "time": "10 PM",
+                "temp": "13\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NE 9 km/h",
+                "Air Quality": "Unhealthy",
+                "Wind Gusts": "24 km/h",
+                "Humidity": "58%"
+            },
+            {
+                "time": "11 PM",
+                "temp": "12\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NE 9 km/h",
+                "Air Quality": "Unhealthy",
+                "Wind Gusts": "24 km/h",
+                "Humidity": "61%"
+            }
+        ]
+    },
+    {
+        "day2": [
+            {
+                "time": "12 AM",
+                "temp": "12\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NE 9 km/h",
+                "Air Quality": "Unhealthy",
+                "Wind Gusts": "24 km/h",
+                "Humidity": "62%"
+            },
+            {
+                "time": "1 AM",
+                "temp": "12\u00b0",
+                "precipitation": "1%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NE 9 km/h",
+                "Air Quality": "Unhealthy",
+                "Wind Gusts": "24 km/h",
+                "Humidity": "62%"
+            },
+            {
+                "time": "2 AM",
+                "temp": "12\u00b0",
+                "precipitation": "1%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NE 9 km/h",
+                "Air Quality": "Unhealthy",
+                "Wind Gusts": "22 km/h",
+                "Humidity": "62%"
+            },
+            {
+                "time": "3 AM",
+                "temp": "12\u00b0",
+                "precipitation": "1%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NNE 9 km/h",
+                "Air Quality": "Unhealthy",
+                "Wind Gusts": "22 km/h",
+                "Humidity": "62%"
+            },
+            {
+                "time": "4 AM",
+                "temp": "11\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NNE 9 km/h",
+                "Air Quality": "Unhealthy",
+                "Wind Gusts": "22 km/h",
+                "Humidity": "62%"
+            },
+            {
+                "time": "5 AM",
+                "temp": "11\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NNE 11 km/h",
+                "Air Quality": "Unhealthy",
+                "Wind Gusts": "22 km/h",
+                "Humidity": "63%"
+            },
+            {
+                "time": "6 AM",
+                "temp": "10\u00b0",
+                "precipitation": "1%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NNE 11 km/h",
+                "Air Quality": "Unhealthy",
+                "Wind Gusts": "22 km/h",
+                "Humidity": "64%"
+            },
+            {
+                "time": "7 AM",
+                "temp": "10\u00b0",
+                "precipitation": "45%",
+                "remarks": "Sunny",
+                "RealFeel Shade\u2122": "9\u00b0",
+                "Wind": "NNE 11 km/h",
+                "Air Quality": "Unhealthy",
+                "Max UV Index": "1 Low"
+            },
+            {
+                "time": "8 AM",
+                "temp": "11\u00b0",
+                "precipitation": "49%",
+                "remarks": "Mostly cloudy w/ showers",
+                "RealFeel Shade\u2122": "8\u00b0",
+                "Wind": "ENE 11 km/h",
+                "Air Quality": "Unhealthy",
+                "Max UV Index": "1 Low"
+            },
+            {
+                "time": "9 AM",
+                "temp": "13\u00b0",
+                "precipitation": "49%",
+                "remarks": "Partly sunny w/ showers",
+                "RealFeel Shade\u2122": "10\u00b0",
+                "Wind": "E 9 km/h",
+                "Air Quality": "Unhealthy",
+                "Max UV Index": "3 Moderate"
+            },
+            {
+                "time": "10 AM",
+                "temp": "15\u00b0",
+                "precipitation": "43%",
+                "remarks": "Mostly sunny",
+                "RealFeel Shade\u2122": "14\u00b0",
+                "Wind": "E 9 km/h",
+                "Air Quality": "Unhealthy",
+                "Max UV Index": "4 Moderate"
+            },
+            {
+                "time": "11 AM",
+                "temp": "17\u00b0",
+                "precipitation": "51%",
+                "remarks": "Mostly cloudy w/ showers",
+                "RealFeel Shade\u2122": "15\u00b0",
+                "Wind": "E 9 km/h",
+                "Max UV Index": "4 Moderate",
+                "Wind Gusts": "22 km/h"
+            },
+            {
+                "time": "12 PM",
+                "temp": "18\u00b0",
+                "precipitation": "47%",
+                "remarks": "Mostly sunny",
+                "RealFeel Shade\u2122": "18\u00b0",
+                "Wind": "ESE 7 km/h",
+                "Max UV Index": "5 Moderate",
+                "Wind Gusts": "20 km/h"
+            },
+            {
+                "time": "1 PM",
+                "temp": "19\u00b0",
+                "precipitation": "48%",
+                "remarks": "Partly sunny",
+                "RealFeel Shade\u2122": "18\u00b0",
+                "Wind": "SE 9 km/h",
+                "Max UV Index": "5 Moderate",
+                "Wind Gusts": "22 km/h"
+            },
+            {
+                "time": "2 PM",
+                "temp": "20\u00b0",
+                "precipitation": "52%",
+                "remarks": "Mostly cloudy w/ showers",
+                "RealFeel Shade\u2122": "17\u00b0",
+                "Wind": "SW 9 km/h",
+                "Max UV Index": "3 Moderate",
+                "Wind Gusts": "24 km/h"
+            },
+            {
+                "time": "3 PM",
+                "temp": "20\u00b0",
+                "precipitation": "48%",
+                "remarks": "Partly sunny",
+                "RealFeel Shade\u2122": "19\u00b0",
+                "Wind": "SW 11 km/h",
+                "Max UV Index": "3 Moderate",
+                "Wind Gusts": "26 km/h"
+            },
+            {
+                "time": "4 PM",
+                "temp": "19\u00b0",
+                "precipitation": "47%",
+                "remarks": "Partly sunny",
+                "RealFeel Shade\u2122": "18\u00b0",
+                "Wind": "SW 9 km/h",
+                "Max UV Index": "2 Low",
+                "Wind Gusts": "22 km/h"
+            },
+            {
+                "time": "5 PM",
+                "temp": "18\u00b0",
+                "precipitation": "51%",
+                "remarks": "Mostly cloudy w/ showers",
+                "RealFeel Shade\u2122": "16\u00b0",
+                "Wind": "WSW 7 km/h",
+                "Max UV Index": "0 Low",
+                "Wind Gusts": "19 km/h"
+            },
+            {
+                "time": "6 PM",
+                "temp": "16\u00b0",
+                "precipitation": "47%",
+                "remarks": "Partly sunny",
+                "RealFeel Shade\u2122": "16\u00b0",
+                "Wind": "WSW 7 km/h",
+                "Max UV Index": "0 Low",
+                "Wind Gusts": "17 km/h"
+            },
+            {
+                "time": "7 PM",
+                "temp": "14\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NE 9 km/h",
+                "Wind Gusts": "17 km/h",
+                "Humidity": "62%",
+                "Indoor Humidity": "43% (Ideal Humidity)"
+            },
+            {
+                "time": "8 PM",
+                "temp": "13\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NE 11 km/h",
+                "Wind Gusts": "15 km/h",
+                "Humidity": "64%",
+                "Indoor Humidity": "41% (Ideal Humidity)"
+            },
+            {
+                "time": "9 PM",
+                "temp": "12\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy moonlight",
+                "Wind": "ENE 11 km/h",
+                "Wind Gusts": "13 km/h",
+                "Humidity": "66%",
+                "Indoor Humidity": "39% (Ideal Humidity)"
+            },
+            {
+                "time": "10 PM",
+                "temp": "11\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NE 11 km/h",
+                "Wind Gusts": "13 km/h",
+                "Humidity": "66%",
+                "Indoor Humidity": "37% (Ideal Humidity)"
+            },
+            {
+                "time": "11 PM",
+                "temp": "11\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NE 11 km/h",
+                "Wind Gusts": "13 km/h",
+                "Humidity": "66%",
+                "Indoor Humidity": "36% (Slightly Dry)"
+            }
+        ]
+    },
+    {
+        "day3": [
+            {
+                "time": "12 AM",
+                "temp": "10\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NE 11 km/h",
+                "Wind Gusts": "13 km/h",
+                "Humidity": "65%",
+                "Indoor Humidity": "34% (Slightly Dry)"
+            },
+            {
+                "time": "1 AM",
+                "temp": "10\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NE 11 km/h",
+                "Wind Gusts": "13 km/h",
+                "Humidity": "65%",
+                "Indoor Humidity": "33% (Slightly Dry)"
+            },
+            {
+                "time": "2 AM",
+                "temp": "9\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NE 11 km/h",
+                "Wind Gusts": "11 km/h",
+                "Humidity": "66%",
+                "Indoor Humidity": "33% (Slightly Dry)"
+            },
+            {
+                "time": "3 AM",
+                "temp": "9\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NE 11 km/h",
+                "Wind Gusts": "11 km/h",
+                "Humidity": "67%",
+                "Indoor Humidity": "32% (Slightly Dry)"
+            },
+            {
+                "time": "4 AM",
+                "temp": "9\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NE 11 km/h",
+                "Wind Gusts": "11 km/h",
+                "Humidity": "66%",
+                "Indoor Humidity": "31% (Slightly Dry)"
+            },
+            {
+                "time": "5 AM",
+                "temp": "8\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NE 11 km/h",
+                "Wind Gusts": "11 km/h",
+                "Humidity": "65%",
+                "Indoor Humidity": "30% (Slightly Dry)"
+            },
+            {
+                "time": "6 AM",
+                "temp": "8\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NE 11 km/h",
+                "Wind Gusts": "11 km/h",
+                "Humidity": "65%",
+                "Indoor Humidity": "30% (Slightly Dry)"
+            },
+            {
+                "time": "7 AM",
+                "temp": "8\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy sunshine",
+                "RealFeel Shade\u2122": "7\u00b0",
+                "Wind": "NE 9 km/h",
+                "Max UV Index": "1 Low",
+                "Wind Gusts": "13 km/h"
+            },
+            {
+                "time": "8 AM",
+                "temp": "9\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy sunshine",
+                "RealFeel Shade\u2122": "7\u00b0",
+                "Wind": "NE 9 km/h",
+                "Max UV Index": "2 Low",
+                "Wind Gusts": "13 km/h"
+            },
+            {
+                "time": "9 AM",
+                "temp": "12\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy sunshine",
+                "RealFeel Shade\u2122": "10\u00b0",
+                "Wind": "NE 9 km/h",
+                "Max UV Index": "3 Moderate",
+                "Wind Gusts": "15 km/h"
+            },
+            {
+                "time": "10 AM",
+                "temp": "15\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy sunshine",
+                "RealFeel Shade\u2122": "14\u00b0",
+                "Wind": "NE 9 km/h",
+                "Max UV Index": "4 Moderate",
+                "Wind Gusts": "13 km/h"
+            },
+            {
+                "time": "11 AM",
+                "temp": "16\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy sunshine",
+                "RealFeel Shade\u2122": "16\u00b0",
+                "Wind": "SW 9 km/h",
+                "Max UV Index": "5 Moderate",
+                "Wind Gusts": "15 km/h"
+            },
+            {
+                "time": "12 PM",
+                "temp": "18\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy sunshine",
+                "RealFeel Shade\u2122": "18\u00b0",
+                "Wind": "SW 7 km/h",
+                "Max UV Index": "5 Moderate",
+                "Wind Gusts": "19 km/h"
+            },
+            {
+                "time": "1 PM",
+                "temp": "20\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy sunshine",
+                "RealFeel Shade\u2122": "18\u00b0",
+                "Wind": "WSW 9 km/h",
+                "Max UV Index": "5 Moderate",
+                "Wind Gusts": "20 km/h"
+            },
+            {
+                "time": "2 PM",
+                "temp": "21\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy sunshine",
+                "RealFeel Shade\u2122": "19\u00b0",
+                "Wind": "WSW 11 km/h",
+                "Max UV Index": "4 Moderate",
+                "Wind Gusts": "24 km/h"
+            },
+            {
+                "time": "3 PM",
+                "temp": "20\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy sunshine",
+                "RealFeel Shade\u2122": "18\u00b0",
+                "Wind": "WSW 13 km/h",
+                "Max UV Index": "3 Moderate",
+                "Wind Gusts": "26 km/h"
+            },
+            {
+                "time": "4 PM",
+                "temp": "20\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy sunshine",
+                "RealFeel Shade\u2122": "18\u00b0",
+                "Wind": "W 11 km/h",
+                "Max UV Index": "2 Low",
+                "Wind Gusts": "22 km/h"
+            },
+            {
+                "time": "5 PM",
+                "temp": "19\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy sunshine",
+                "RealFeel Shade\u2122": "18\u00b0",
+                "Wind": "W 9 km/h",
+                "Max UV Index": "1 Low",
+                "Wind Gusts": "19 km/h"
+            },
+            {
+                "time": "6 PM",
+                "temp": "17\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy sunshine",
+                "RealFeel Shade\u2122": "17\u00b0",
+                "Wind": "W 7 km/h",
+                "Max UV Index": "0 Low",
+                "Wind Gusts": "17 km/h"
+            },
+            {
+                "time": "7 PM",
+                "temp": "15\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NNW 9 km/h",
+                "Wind Gusts": "13 km/h",
+                "Humidity": "49%",
+                "Indoor Humidity": "36% (Slightly Dry)"
+            },
+            {
+                "time": "8 PM",
+                "temp": "14\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NNE 9 km/h",
+                "Wind Gusts": "13 km/h",
+                "Humidity": "52%",
+                "Indoor Humidity": "35% (Slightly Dry)"
+            },
+            {
+                "time": "9 PM",
+                "temp": "12\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NE 9 km/h",
+                "Wind Gusts": "11 km/h",
+                "Humidity": "56%",
+                "Indoor Humidity": "34% (Slightly Dry)"
+            },
+            {
+                "time": "10 PM",
+                "temp": "11\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NE 11 km/h",
+                "Wind Gusts": "11 km/h",
+                "Humidity": "60%",
+                "Indoor Humidity": "34% (Slightly Dry)"
+            },
+            {
+                "time": "11 PM",
+                "temp": "11\u00b0",
+                "precipitation": "0%",
+                "remarks": "Hazy moonlight",
+                "Wind": "NE 11 km/h",
+                "Wind Gusts": "11 km/h",
+                "Humidity": "63%",
+                "Indoor Humidity": "35% (Slightly Dry)"
+            }
+        ]
+    }
+]
