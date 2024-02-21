@@ -1,4 +1,0 @@
-selenium==4.17.2
-openpyxl==3.1.2
-pandas==2.2.0
-pyarrow==15.0.0

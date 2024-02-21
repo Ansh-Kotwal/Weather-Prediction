@@ -4,18 +4,15 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 
 def scrappingDailyData(driver , heading , url):
-        print("inside scrapping data daily")
-        print(heading + " = " + url)
+ print(heading + " = " + url)
  
-        daily_Data = []
+ daily_Data = []
 
-        for day in range (1 , 4):
-                perDayData(driver , f"{url}?day={day}" , day , daily_Data)
+ for day in range (1 ,45):
+   perDayData(driver , f"{url}?day={day}" , day , daily_Data)
 
-        print("Data Successfully Added")
-        return daily_Data
-
-
+ print("Data Successfully Added")
+ return daily_Data
         
 def perDayData(driver , dayUrl , day , daily_Data):
    driver.get(dayUrl)
@@ -26,7 +23,7 @@ def perDayData(driver , dayUrl , day , daily_Data):
    day_night_tag = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, "title")))
    other_data = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, "value")))
 
-   print(f"Day {day}")
+   print(day)
    #print(len(day_night_tag))
 
    if len(day_night_tag) == 6:  
@@ -74,9 +71,8 @@ def perDayData(driver , dayUrl , day , daily_Data):
             
    dataAppend(day , per_Day_Data , daily_Data)
    
-   
 def dataAppend(day , per_Day_Data , daily_Data):
-        
+  
   per_Day_Data = {
             f"day{day}" : per_Day_Data
         }
