@@ -4,35 +4,29 @@ from selenium.webdriver.support.ui import WebDriverWait
 from jsonOutput import jsonOutputFile
 import time
 from selenium import webdriver
+from jsonOutput import jsonOutputFile
 
 
 def fetchHourlyData(driver , url ):
     print("Hello")
     driver.get(url)
     
-
     time.sleep(2)
-    
+      
     wait = WebDriverWait(driver, 5)
     cards = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'hourly-card-top ')))
-    
-
-    # time.sleep(2)
-    # wait.until(lambda _: all(e.is_enabled() for e in cards))
     
     for e in cards:
             wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'hourly-card-top')))
             e.click()
+        
 
-        
-        
-        
-    time_tag = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME,'date')))
-    temp = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME,'temp')))
-    remark = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME,'phrase')))
-    precipitation = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME,'precip')))
-    first_half_data = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME,'panel')))
-        
+    
+    time_tag = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'date')))
+    temp = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'temp')))
+    remark = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'phrase')))
+    precipitation = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'precip')))
+    first_half_data = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'panel')))
         
         
     main_dict = []
@@ -50,6 +44,7 @@ def fetchHourlyData(driver , url ):
         
         data1 = first_half_data[counter].text.splitlines()
         counter+=1
+        
         data2 = first_half_data[counter].text.splitlines()      
         counter+=1
         
@@ -96,3 +91,12 @@ def getHourlyData(driver , location ,url ):
         
     
     return dataList
+
+
+def start():
+    driver = webdriver.Chrome()
+    # driver.get(url)
+    data = getHourlyData(driver , "ohio" , "https://www.accuweather.com/en/gb/london/ec4a-2/hourly-weather-forecast/328328")
+    jsonOutputFile("london", "hourly", data)
+    
+start()

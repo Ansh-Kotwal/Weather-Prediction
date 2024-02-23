@@ -1,8 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium import webdriver
-from selenium.webdriver.common.action_chains import ActionChains
+import time
 
 def getHourlyData(driver , location ,url ):
     print("Getting Hourly data")
@@ -21,51 +20,70 @@ def getHourlyData(driver , location ,url ):
     return dataList
 
 
-def fetchHourlyData(driver, url):
+def fetchHourlyData(driver , url ):
+    print("Hello")
     driver.get(url)
-
-    wait = WebDriverWait(driver, 10) # max 10 sec delay
+    
+    time.sleep(2)
+      
+    wait = WebDriverWait(driver, 5)
     cards = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'hourly-card-top ')))
-
+    
     for e in cards:
-        action = ActionChains(driver)
-        action.move_to_element(e).click().perform()
-
-    time_tags = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'date')))
-    temps = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'temp')))
-    remarks = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'phrase')))
-    precipitations = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'precip')))
-    first_half_data = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'panel')))
-
-    main_dict = []
-
-    counter = 0
-
-    for i in range(len(cards)):
-        data_dict = {
-            "time": time_tags[i].text,
-            "temp": temps[i].text,
-            "precipitation": precipitations[i].text,
-            "remarks": remarks[i].text
-        }
-
-        data1 = first_half_data[counter].text.splitlines()
-        counter += 1
-        data2 = first_half_data[counter].text.splitlines()
-        counter += 1
-
-        for j in range(0, len(data1), 2):
-            key, value = data1[j], data1[j + 1]
-            data_dict[key] = value
-
-        for j in range(0, len(data2), 2):
-            key, value = data2[j], data2[j + 1]
-            data_dict[key] = value
-
-        main_dict.append(data_dict)
-    print("collected")
-    return main_dict
-
+            wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'hourly-card-top')))
+            e.click()
+        
 
     
-
+    time_tag = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'date')))
+    temp = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'temp')))
+    remark = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'phrase')))
+    precipitation = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'precip')))
+    first_half_data = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'panel')))
+        
+        
+    main_dict = []
+    
+    counter = 0
+    
+    for i in range(0, len(cards)):
+        
+        data_dict = {
+            "time":time_tag[i].text,
+            "temp":temp[i].text,
+            "precipitation":precipitation[i].text,
+            "remarks":remark[i].text
+        }
+        
+        data1 = first_half_data[counter].text.splitlines()
+        counter+=1
+        
+        data2 = first_half_data[counter].text.splitlines()      
+        counter+=1
+        
+        j = 0
+        while j<len(data1):
+            key = data1[j]
+            j+=1
+            value = data1[j]
+            j+=1
+            
+            pair = {key:value}
+            data_dict.update(pair)
+        
+        j=0
+        while j<len(data2):
+            key = data2[j]
+            j+=1
+            value = data2[j]
+            j+=1
+            
+            pair = {key:value}
+            data_dict.update(pair)
+          
+          
+        main_dict.append(data_dict)
+       
+        
+    return main_dict
+        
