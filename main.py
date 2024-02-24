@@ -12,3 +12,6 @@ class main:
 # Class run
 test_instance = main
 con = test_instance.main()
+
+# pip 
+# pip install -r requirements.txt

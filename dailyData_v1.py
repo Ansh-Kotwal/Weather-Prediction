@@ -8,7 +8,7 @@ def scrappingDailyData(driver , heading , url):
  
  daily_Data = []
 
- for day in range (1 ,45):
+ for day in range (1 , 10):
    perDayData(driver , f"{url}?day={day}" , day , daily_Data)
 
  print("Data Successfully Added")
@@ -23,7 +23,7 @@ def perDayData(driver , dayUrl , day , daily_Data):
    day_night_tag = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, "title")))
    other_data = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, "value")))
 
-   print(day)
+   print(f"Day {day}")
    #print(len(day_night_tag))
 
    if len(day_night_tag) == 6:  
@@ -74,11 +74,39 @@ def perDayData(driver , dayUrl , day , daily_Data):
 def dataAppend(day , per_Day_Data , daily_Data):
   
   per_Day_Data = {
-            f"day{day}" : per_Day_Data
+            f"day {day}" : per_Day_Data
         }
      
   daily_Data.append(per_Day_Data)    
        
- 
+def flattenDailyDataJson(json_data):
+    flattened_data = []
+    for record in json_data:
+        for key, value in record.items():
+            day_number = key
+            day = value['day']
+            night = value['night']
+            flattened_record = {
+                'Days': day_number.capitalize(),
+                'Day Temperature': day['temp'],
+                'Max UV Index': day['max_uv_index'],
+                'Day Wind': day['wind'],
+                'Day Wind Gust': day['wind_gust'],
+                'Day Probability of Precipitation': day['probability_of_precipitation'],
+                'Day Probability of Thunderstorms': day['probability_of_thunderstorms'],
+                'Day Precipitation': day['Precipitation'],
+                'Day Cloud Cover': day['cloud_cover'],
+                'Day Remark': day['remark'],
+                'Night Temperature': night['temp'],
+                'Night Wind': night['wind'],
+                'Night Wind Gust': night['wind_gust'],
+                'Night Probability of Precipitation': night['probability_of_precipitation'],
+                'Night Probability of Thunderstorms': night['probability_of_thunderstorms'],
+                'Night Precipitation': night['Precipitation'],
+                'Night Cloud Cover': night['cloud_cover'],
+                'Night Remark': night['remark']
+            }
+            flattened_data.append(flattened_record)
+    return flattened_data 
     
   
