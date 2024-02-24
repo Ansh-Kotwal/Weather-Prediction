@@ -3,9 +3,11 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-from dailyData_v1 import scrappingDailyData
+from dailyData_v1 import scrappingDailyData , flattenDailyDataJson
 from jsonOutput import jsonOutputFile
 from excelOutput import json_to_excel
+from historicalData import *
+from hourlyData import scrappingHourlyData
 import json
 
 
@@ -15,7 +17,7 @@ class Scrapping:
   try:
    
    chrome_options = webdriver.ChromeOptions()
-   chrome_options.add_argument("--headless")
+#    chrome_options.add_argument("--headless")
    chrome_options.add_argument(
    "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36")
 
@@ -42,18 +44,28 @@ class Scrapping:
    
    
    daily_data = scrappingDailyData(driver ,element[2].text, element[2].get_attribute('href'))
+   
+   historical_data = scrappingHistoricalData(location)
+ 
+#    hourly_data = scrappingHourlyData(driver , location , element[1].get_attribute('href'))
     
    jsonOutputFile(location , daily_data)
 
-   f = open(f"{location.capitalize()}WeatherInfo.json")
+   f = open(f"Json\{location.capitalize()}WeatherInfo.json")
 
    json_data = json.load(f)
+
+   flatten_json_data = flattenDailyDataJson(json_data)
    
-   json_to_excel(json_data, f"{location.capitalize()}WeatherInfo.xlsx")
+   json_to_excel(flatten_json_data, f"{location.capitalize()}WeatherInfo.xlsx")
+
+#    json_to_excel_hd(hourly_data , location)
+   
+   json_to_excel(historical_data , f"{location.capitalize()}HistoricalInfo.xlsx")
+
 
    
-   
-   
+
   except Exception as e:
    print(e) 
 
