@@ -1,7 +1,7 @@
 import json
 
-def jsonOutputFile(location , data):
-  with open(f"Json/{location.capitalize()}WeatherInfo.json", "w") as outfile:
+def jsonOutputFile(location , data , name):
+  with open(f"Json\\{location.capitalize()}{name}.json", "w") as outfile:
     json.dump(data, outfile)
-  print("Json File Successfully Created")   
+  print("\n------ Json File Successfully Created ------")   
   
