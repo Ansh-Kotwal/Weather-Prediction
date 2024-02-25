@@ -21,6 +21,6 @@ def json_to_excel(json_data, excel_file):
     # Open Excel file
    # os.system(f'start excel "{excel_file}"')
     
-    print("Excel File Successfully Created") 
+    print("\n------ Excel File Successfully Created ------") 
 
 # json_to_excel(json_data, 'output_excel_file.xlsx')

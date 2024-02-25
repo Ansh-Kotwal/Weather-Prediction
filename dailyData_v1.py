@@ -3,15 +3,19 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 
-def scrappingDailyData(driver , heading , url):
- print(heading + " = " + url)
+def scrappingDailyData(driver , url):
+ 
+ print("\n########################################################################################################################################\n")
+ print("------ Scrapping Daily Data ------\n")
  
  daily_Data = []
 
- for day in range (1 , 10):
+ for day in range (1 , 45):
    perDayData(driver , f"{url}?day={day}" , day , daily_Data)
+   print(f"-> Day {day} data collected")
 
- print("Data Successfully Added")
+ print("\n------ Daily Data Scrapping Completed ------")
+#  print("########################################################################################################################################")
  return daily_Data
         
 def perDayData(driver , dayUrl , day , daily_Data):
@@ -23,7 +27,6 @@ def perDayData(driver , dayUrl , day , daily_Data):
    day_night_tag = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, "title")))
    other_data = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, "value")))
 
-   print(f"Day {day}")
    #print(len(day_night_tag))
 
    if len(day_night_tag) == 6:  

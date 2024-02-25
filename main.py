@@ -4,9 +4,11 @@ class main:
     def main():
      serverRun = scrapper_v1.Scrapping
 
-
-     location = input("Enter location => ")
+     print("\n########################################################################################################################################\n")
+     location = input("-> Enter location => ")
      serverRun.scrappingData(location)
+     print("\n------ All Data Sucessfully Scrapped/Fetched ------")
+     print("\n########################################################################################################################################\n")
 
 
 # Class run

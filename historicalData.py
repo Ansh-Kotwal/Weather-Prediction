@@ -8,8 +8,14 @@ from retry_requests import retry
 from geopy.geocoders import Nominatim
 
 def scrappingHistoricalData(location):
+  print("\n########################################################################################################################################\n") 
+  print("------ Fetching Historical Data ------\n")
+
   location_coordinate = coordinateLocater(location)
   data = meteoApiCall(location , location_coordinate)
+
+  print("\n------ Historical Data Fetched ------")
+  # print("########################################################################################################################################") 
   return data
 
 def coordinateLocater(location):
@@ -40,10 +46,10 @@ def meteoApiCall(location , location_coordinate):
 
 # Process first location. Add a for-loop for multiple locations or weather models
   response = responses[0]
-  print(f"Coordinates {response.Latitude()}°N {response.Longitude()}°E")
-  print(f"Elevation {response.Elevation()} m asl")
-  print(f"Timezone {response.Timezone()} {response.TimezoneAbbreviation()}")
-  print(f"Timezone difference to GMT+0 {response.UtcOffsetSeconds()} s")
+  print(f"->  Coordinates {response.Latitude()}°N {response.Longitude()}°E")
+  print(f"->  Elevation {response.Elevation()} m asl")
+  print(f"->  Timezone {response.Timezone()} {response.TimezoneAbbreviation()}")
+  print(f"->  Timezone difference to GMT+0 {response.UtcOffsetSeconds()} s")
 
 # Process daily data. The order of variables needs to be the same as requested.
   daily = response.Daily()
@@ -110,24 +116,3 @@ def meteoApiCall(location , location_coordinate):
    #print(daily_dataframe)
 
   return data
-
-def json_to_excel_hd(data , location):
-    
-    # Create a workbook and select the active worksheet
-    wb = Workbook()
-    ws = wb.active
-
-    # Write column headers
-    headers = list(data[0].keys())
-    ws.append(headers)
-
-    # Write data rows
-    for record in data:
-     ws.append(list(record.values()))
-
-    # Save workbook
-    wb.save(f"Excel/{location.capitalize()}HistoricalData.xlsx")
-    
-    print("Excel File Successfully Created") 
-
-coordinateLocater("delhi")
