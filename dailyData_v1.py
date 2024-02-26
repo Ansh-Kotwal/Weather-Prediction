@@ -10,7 +10,7 @@ def scrappingDailyData(driver , url):
  
  daily_Data = []
 
- for day in range (1 , 45):
+ for day in range (1 , 4):
    perDayData(driver , f"{url}?day={day}" , day , daily_Data)
    print(f"-> Day {day} data collected")
 
@@ -32,7 +32,7 @@ def perDayData(driver , dayUrl , day , daily_Data):
    if len(day_night_tag) == 6:  
 
             per_Day_Data = {
-                    "day":{
+                     "day":{
                             "available" : 1,
                             "temp": temp_tag[0].text,
                             "max_uv_index":other_data[0].text,
@@ -42,8 +42,8 @@ def perDayData(driver , dayUrl , day , daily_Data):
                             "probability_of_thunderstorms":other_data[4].text,
                             "Precipitation": other_data[5].text,
                             "cloud_cover": other_data[6].text,
-                            "remark": phrase_tag[0].text,
-                            },
+                            "remark": phrase_tag[0].text
+                           },
                     "night":{
                             "temp": temp_tag[1].text,
                             "wind": other_data[7].text,
@@ -58,14 +58,23 @@ def perDayData(driver , dayUrl , day , daily_Data):
    else:          
             per_Day_Data = {
                     "day":{
-                             "available" : 0
+                             "available" : 0 ,
+                            "temp": "N/A",
+                            "max_uv_index":"N/A",
+                            "wind": "N/A",
+                            "wind_gust":"N/A",
+                            "probability_of_precipitation":"N/A",
+                            "probability_of_thunderstorms":"N/A",
+                            "Precipitation": "N/A",
+                            "cloud_cover": "N/A",
+                            "remark": "N/A"
                            },
                     "night":{
                             "temp": temp_tag[0].text,
                             "wind": other_data[0].text,
                             "wind_gust":other_data[1].text,
-                            "Probability of Precipitation":other_data[2].text,
-                            "Probability of Thunderstorms":other_data[3].text,
+                            "probability_of_precipitation":other_data[2].text,
+                            "probability_of_thunderstorms":other_data[3].text,
                             "Precipitation": other_data[4].text,
                             "cloud_cover": other_data[5].text,
                             "remark": phrase_tag[0].text

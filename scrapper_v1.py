@@ -8,7 +8,8 @@ from jsonOutput import jsonOutputFile
 from excelOutput import json_to_excel
 from historicalData import *
 from hourlyData import scrappingHourlyData
-import json
+from airQualityData import scrappingAQIData
+
 
 
 class Scrapping: 
@@ -25,7 +26,7 @@ class Scrapping:
 #    driver = webdriver.Chrome(chrome_options)
 
    firefox_options = webdriver.FirefoxOptions()
-   firefox_options.add_argument("--headless")
+#  firefox_options.add_argument("--headless")
    driver = webdriver.Firefox(firefox_options)
 
 
@@ -49,30 +50,31 @@ class Scrapping:
 
    element = driver.find_elements(By.CLASS_NAME, "subnav-item")
 
-   daily_url = element[2].get_attribute('href')
    hourly_data = element[1].get_attribute('href')
+   daily_url = element[2].get_attribute('href')
+   aqi_url = element[6].get_attribute('href')
    
+   ####################################################################
+   
+   hourly_data = scrappingHourlyData(driver , location , hourly_data)
+
+   jsonOutputFile(location , hourly_data , "HourlyData" )
+
    ####################################################################
 
    daily_data = scrappingDailyData(driver , daily_url)
 
    jsonOutputFile(location , daily_data , "DailyData")
 
-   f = open(f"Json\\{location.capitalize()}DailyData.json")
-
-
-
-   json_data = json.load(f)
-
-   flatten_json_data = flattenDailyDataJson(json_data)
+   flatten_json_data = flattenDailyDataJson(daily_data)
 
    json_to_excel(flatten_json_data, f"{location.capitalize()}DailyData.xlsx")
 
    ####################################################################
    
-   hourly_data = scrappingHourlyData(driver , location , hourly_data)
-
-   jsonOutputFile(location , hourly_data , "HourlyData" )
+   aqi_data = scrappingAQIData(driver , aqi_url )
+   
+   jsonOutputFile(location , aqi_data , "AQIData" )
      
    ####################################################################
    
@@ -80,7 +82,7 @@ class Scrapping:
    
    json_to_excel(historical_data , f"{location.capitalize()}HistoricalData.xlsx")
 
-
+   ####################################################################
 
   except Exception as e:
    print(e) 

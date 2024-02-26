@@ -31,14 +31,14 @@ def fetchHourlyData(driver, url , day):
 
     # wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "img.close_cross_big"))).click()
     
-    time.sleep(2)
+    # time.sleep(2)
       
 
     cards = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'hourly-card-top ')))
     
     for e in cards:
-            wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'hourly-card-top')))
-            e.click()
+     driver.execute_script("arguments[0].click();", e)
+
         
 
     
