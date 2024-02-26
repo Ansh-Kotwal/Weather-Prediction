@@ -62,28 +62,36 @@ def scrappingAQIData(driver , url ):
       "daily" : daily_data
    }
    
-  printData(data) 
+
+  printAQIData(data)
   print("------ AQI Data Scrapping Completed  ------")
   return data
   
 
 
-def printData(data):
+def printAQIData(data):
+
+
   print("------ Daily Air Quality Info ------\n")
   print("AQI -> " , data["daily"][0]["aqi_value"] )
   print("Condition -> " , data["daily"][0]["condition"])
   print("Statement -> " ,data["daily"][0]["statement"])
   print("\n------------ Pollutants ------------\n")
 
-  pollutant_name = ["PM 2.5","PM 10","NO 2","O 3","SO 2","CO"]
+  pollutant_name = []
+  for e in data["pollutants"]:
+   for keys , value in e.items():
+    pollutant_name.append(keys)
 
-  for i in range(0 , 6):
-   print("Pollutant -> " , pollutant_name[i])
-   print("Pollutant Index -> " , data["pollutants"][i][f"{pollutant_name[i]}"]["pollutant_index"])
-   print("Pollutant concentration -> " , data["pollutants"][i][f"{pollutant_name[i]}"]["pollutant-concentration"])
-   print("Condition -> " , data["pollutants"][i][f"{pollutant_name[i]}"]["condition"])
-   print("\n------------------------------------\n")
-   
+  try :
+   for i in range(0 , 6):
+    print("Pollutant -> " , pollutant_name[i])
+    print("Pollutant Index -> " , data["pollutants"][i][f"{pollutant_name[i]}"]["pollutant_index"])
+    print("Pollutant concentration -> " , data["pollutants"][i][f"{pollutant_name[i]}"]["pollutant-concentration"])
+    print("Condition -> " , data["pollutants"][i][f"{pollutant_name[i]}"]["condition"])
+    print("\n------------------------------------\n")
+  except Exception as e :
+   print(e)
    
 # f = open(f"Json\\DehradunAQI.json")
 # json_data = json.load(f)
