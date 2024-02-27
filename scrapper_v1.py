@@ -21,12 +21,13 @@ class Scrapping:
 #    chrome_options.add_argument("--headless")
 #    chrome_options.add_argument(
 #    "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36")
-#  #  chrome_options.add_argument('--blink-settings=imagesEnabled=false')
+#    chrome_options.add_argument('--blink-settings=imagesEnabled=false')
 
 #    driver = webdriver.Chrome(chrome_options)
 
    firefox_options = webdriver.FirefoxOptions()
-#  firefox_options.add_argument("--headless")
+   firefox_options.add_argument("--headless")
+   firefox_options.add_argument('--blink-settings=imagesEnabled=false')
    driver = webdriver.Firefox(firefox_options)
 
 
