@@ -10,7 +10,7 @@ def scrappingDailyData(driver , url):
  
  daily_Data = []
 
- for day in range (1 , 4):
+ for day in range (1 , 45):
    perDayData(driver , f"{url}?day={day}" , day , daily_Data)
    print(f"-> Day {day} data collected")
 
@@ -24,62 +24,57 @@ def perDayData(driver , dayUrl , day , daily_Data):
 
    temp_tag = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, "temperature")))
    phrase_tag =  wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, "phrase")))
-   day_night_tag = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, "title")))
-   other_data = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, "value")))
+   panels = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, "panels")))
 
-   #print(len(day_night_tag))
+   day_panel = panels[0].text.splitlines() 
+   night_panel = panels[(len(panels)-1)].text.splitlines()  
 
-   if len(day_night_tag) == 6:  
-
-            per_Day_Data = {
+   per_Day_Data = {
                      "day":{
-                            "available" : 1,
-                            "temp": temp_tag[0].text,
-                            "max_uv_index":other_data[0].text,
-                            "wind": other_data[1].text,
-                            "wind_gust":other_data[2].text,
-                            "probability_of_precipitation":other_data[3].text,
-                            "probability_of_thunderstorms":other_data[4].text,
-                            "Precipitation": other_data[5].text,
-                            "cloud_cover": other_data[6].text,
-                            "remark": phrase_tag[0].text
+                            "Available" : 0,
+                            "Temperature": None,
+                            "Max UV Index": None,
+                            "Wind": None,
+                            "Wind Gusts": None,
+                            "Probability of Precipitation": None,
+                            "Probability of Thunderstorms": None,
+                            "Precipitation": None,
+                            "Rain": 0, 
+                            "Hours of Precipitation":0, 
+                            "Hours of Rain" : 0,
+                            "Cloud Cover": None,
+                            "Remark": None
                            },
-                    "night":{
-                            "temp": temp_tag[1].text,
-                            "wind": other_data[7].text,
-                            "wind_gust":other_data[8].text,
-                            "probability_of_precipitation":other_data[9].text,
-                            "probability_of_thunderstorms":other_data[10].text,
-                            "Precipitation": other_data[11].text,
-                            "cloud_cover": other_data[12].text,
-                            "remark": phrase_tag[1].text,
+                    "night":{                
+                            "Temperature": temp_tag[(len(temp_tag)-1)].text,
+                            "Wind": 0,
+                            "Wind Gusts" : 0,
+                            "Probability of Precipitation":  0,
+                            "Probability of Thunderstorms": 0,
+                            "Precipitation":  0,
+                            "Rain": 0 , 
+                            "Hours of Precipitation":0, 
+                            "Hours of Rain" : 0,
+                            "Cloud Cover":  0,
+                            "Remark": phrase_tag[(len(phrase_tag)-1)].text,
                             }
                     }
-   else:          
-            per_Day_Data = {
-                    "day":{
-                             "available" : 0 ,
-                            "temp": "N/A",
-                            "max_uv_index":"N/A",
-                            "wind": "N/A",
-                            "wind_gust":"N/A",
-                            "probability_of_precipitation":"N/A",
-                            "probability_of_thunderstorms":"N/A",
-                            "Precipitation": "N/A",
-                            "cloud_cover": "N/A",
-                            "remark": "N/A"
-                           },
-                    "night":{
-                            "temp": temp_tag[0].text,
-                            "wind": other_data[0].text,
-                            "wind_gust":other_data[1].text,
-                            "probability_of_precipitation":other_data[2].text,
-                            "probability_of_thunderstorms":other_data[3].text,
-                            "Precipitation": other_data[4].text,
-                            "cloud_cover": other_data[5].text,
-                            "remark": phrase_tag[0].text
-                            }
-                    }
+   
+   
+    
+   if(len(panels) == 2): 
+    per_Day_Data["day"]["Available"] = 1
+    per_Day_Data["day"]["Temperature"] = temp_tag[0].text
+    per_Day_Data["day"]["Remark"] = phrase_tag[0].text
+
+    for i in range (0 , len(day_panel) , 2):
+       per_Day_Data["day"][f"{day_panel[i]}"]=day_panel[i+1]
+   else:
+    print("No day data available")   
+
+
+   for i in range (0 , len(night_panel) , 2):  
+       per_Day_Data["night"][f"{night_panel[i]}"]= night_panel[i+1]
             
    dataAppend(day , per_Day_Data , daily_Data)
    
